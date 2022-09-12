@@ -22,8 +22,9 @@ package apis
 import (
 	"k8s.io/apimachinery/pkg/runtime"
 
-	//v1alpha1 "github.com/crossplane-contrib/provider-jet-dynatracedamyan/apis/null/v1alpha1"
+	v1alpha1 "github.com/crossplane-contrib/provider-jet-dynatracedamyan/apis/null/v1alpha1"
 	v1alpha1apis "github.com/crossplane-contrib/provider-jet-dynatracedamyan/apis/v1alpha1"
+	
 )
 
 func init() {

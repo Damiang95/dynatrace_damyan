@@ -23,12 +23,12 @@ import (
 	tjconfig "github.com/crossplane/terrajet/pkg/config"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 
-	"github.com/crossplane-contrib/provider-jet-dynatracedamyan/config/environment"
+	"github.com/crossplane-contrib/provider-jet-template/config/null"
 )
 
 const (
-	resourcePrefix = "dynatracedamyan"
-	modulePath     = "github.com/crossplane-contrib/provider-jet-dynatracedamyan"
+	resourcePrefix = "template"
+	modulePath     = "github.com/crossplane-contrib/provider-jet-template"
 )
 
 //go:embed schema.json
@@ -44,14 +44,11 @@ func GetProvider() *tjconfig.Provider {
 	}
 
 	pc := tjconfig.NewProviderWithSchema([]byte(providerSchema), resourcePrefix, modulePath,
-		tjconfig.WithDefaultResourceFn(defaultResourceFn),
-		tjconfig.WithIncludeList([]string{
-			"dyntrace_environment$",
-			})) 
+		tjconfig.WithDefaultResourceFn(defaultResourceFn))
 
 	for _, configure := range []func(provider *tjconfig.Provider){
 		// add custom config functions
-		environment.Configure,
+		null.Configure,
 	} {
 		configure(pc)
 	}
