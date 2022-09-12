@@ -22,9 +22,14 @@ package apis
 import (
 	"k8s.io/apimachinery/pkg/runtime"
 
+<<<<<<< HEAD
 	v1alpha1 "github.com/crossplane-contrib/provider-jet-template/apis/null/v1alpha1"
 	v1alpha1apis "github.com/crossplane-contrib/provider-jet-template/apis/v1alpha1"
 	
+=======
+	v1alpha1 "github.com/crossplane-contrib/provider-jet-dynatracedamyan/apis/null/v1alpha1"
+	v1alpha1apis "github.com/crossplane-contrib/provider-jet-dynatracedamyan/apis/v1alpha1"
+>>>>>>> parent of 6a78588... fix
 )
 
 func init() {
